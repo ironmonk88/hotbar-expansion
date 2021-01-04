@@ -11,7 +11,7 @@ Pressing the page number on the standard Hotbar will expand all Hotbar rows, and
 It will allow you to directly pick the row you wish to see by clicking the number beside the expanded rows, rather than paging to it.
 And clicking the trash can will allow you to clear an entire row of macros.
 
-![ExpandedHotbar](https://github.com/ironmonk88/hotbar-expansion/blob/master/screenshots/ExpandedHotbar.png?raw=true)
+![ExpandedHotbar](/screenshots/ExpandedHotbar.png)
 
 ## Known Issues
 Dragging between macros on the expanded bars isn't working.  I'm not sure why.
