@@ -1,0 +1,25 @@
+{
+	"name": "monks-hotbar-expansion",
+	"title": "Monk's Hotbar Expansion",
+	"description": "Click to show all rows of the Hotbar, so that you can select the row by sight rather than clicking through pages.  Drag and Drop on any of the rows, and clear an entire row if needed.",
+	"version": "1.0.0",
+	"author": "Michael Weisner",
+	"socket": true,
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json"
+		}
+	],
+	"esmodules": [
+		"hotbarexpansion.js"
+	],
+	"styles": [ "css/hotbarexpansion.css" ],
+	"packs": [],
+	"url": "https://github.com/ironmonk88/hotbar-expansion",
+	"download": "https://github.com/ironmonk88/hotbar-expansion/archive/1.0.0.zip",
+	"manifest": "https://raw.githubusercontent.com/ironmonk88/hotbar-expansion/master/module.json",
+	"minimumCoreVersion": "0.7.1",
+	"compatibleCoreVersion": "0.7.9"
+}

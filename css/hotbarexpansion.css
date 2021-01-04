@@ -1,0 +1,53 @@
+#hotbar .macro .tooltip{
+    z-index:30;
+}
+
+.hotbar-page {
+    position: fixed;
+    bottom: 70px;
+    width: 582px;
+    left: 220px;
+    transition: height 1s ease;
+    height: 260px;
+    z-index: 10;
+}
+.hotbar-page.opening {
+    overflow: hidden;
+}
+
+.hotbar-page.collapsed {
+    height: 0px;
+    overflow: hidden;
+}
+
+.hotbar-page .action-bar {
+    flex: 1;
+    height: 52px;
+    pointer-events: all;
+}
+
+.hotbar-page .macro-list {
+    flex: 0 0 502px;
+    height: 100%;
+    list-style: none;
+    margin: 0 2px;
+    padding: 0;
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+
+.hotbar-page .macro-list.selected {
+    border: 1px solid red;
+}
+
+.hotbar-page .bar-controls {
+    cursor: pointer;
+}
+
+#hotbar .hotbar-page .bar-controls span.page-number,
+#hotbar .hotbar-page .bar-controls i {
+    line-height: 50px;
+}
+.hotbar-page .page-number:hover {
+    text-shadow: 0 0 8px red;
+}
