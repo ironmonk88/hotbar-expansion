@@ -13,12 +13,9 @@ export let i18n = key => {
 export class MonksHotbarExpansion {
     static tracker = false;
     static tokenbar = null;
-    static mim = null;
 
     static init() {
 	    log("initializing");
-        // element statics
-        
     }
 
     static ready() {
@@ -64,7 +61,6 @@ export class MonksHotbarExpansion {
             actionBar.find('#macro-list').addClass('macro-list').removeAttr('id').toggleClass('selected', app.page == i);
             actionBar.find('#hotbar-page-controls').removeAttr('id').find('.page-control').remove();
             $('.bar-controls:not(.clear-row)', actionBar).toggleClass('selected', app.page == i).on('click', $.proxy(MonksHotbarExpansion.changePage, app, i));
-            //app.activateListeners(actionBar);
             $(".macro", actionBar).click(app._onClickMacro.bind(app)).hover(app._onHoverMacro.bind(app));
             hotbarpage.append(actionBar);
         }
