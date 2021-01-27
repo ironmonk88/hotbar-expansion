@@ -36,9 +36,11 @@
     border-radius: 3px;
 }
 
+/*
 .hotbar-page .macro-list.selected {
     border: 1px solid red;
 }
+*/
 
 .hotbar-page .bar-controls {
     cursor: pointer;
