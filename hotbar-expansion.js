@@ -63,6 +63,11 @@ export class MonksHotbarExpansion {
             $('.bar-controls:not(.clear-row)', actionBar).toggleClass('selected', app.page == i).on('click', $.proxy(MonksHotbarExpansion.changePage, app, i));
             $(".macro", actionBar).click(app._onClickMacro.bind(app)).hover(app._onHoverMacro.bind(app));
             hotbarpage.append(actionBar);
+
+            Hooks.callAll('renderMonksHotbarExpansionActionBar', app, actionBar, {
+              page: i,
+              macros,
+            });
         }
         $('#macro-list', html).append(hotbarpage);
 
