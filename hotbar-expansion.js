@@ -76,8 +76,11 @@ export class MonksHotbarExpansion {
     }
 }
 
-Hooks.on('renderHotbar', MonksHotbarExpansion.renderHotbar);
+Hooks.on('renderHotbar', (app, html) => {
+    if(app instanceof CONFIG.ui.hotbar)
+        MonksHotbarExpansion.renderHotbar(app, html);
+});
 Hooks.on('render', (app, html) => {
-    if (app instanceof Hotbar)
+    if (app instanceof CONFIG.ui.hotbar)
         MonksHotbarExpansion.renderHotbar(app, html);
 });
