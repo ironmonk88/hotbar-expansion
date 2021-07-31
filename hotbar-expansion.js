@@ -45,6 +45,7 @@ export class MonksHotbarExpansion {
     static async renderHotbar(app, html, options) {
         if (app._pagecollapsed == undefined)
             app._pagecollapsed = true;
+        app._dragDrop[0].dropSelector = "#macro-list,.macro-list";
         let hotbarpage = $('<div>').addClass('hotbar-page flexcol').toggleClass('collapsed', app._pagecollapsed);
         for (let i = 1; i <= 5; i++) {
             let macros = app._getMacrosByPage(i);
@@ -52,16 +53,21 @@ export class MonksHotbarExpansion {
             let macroRow = await renderTemplate(app.options.template, {
                 page: i,
                 macros: macros,
-                barClass: "",
-                dragDrop: [{ dragSelector: ".macro-icon", dropSelector: ".macro-list" }]
+                barClass: ""
             });
             let actionBar = $('#action-bar', macroRow);
+            
+            //dragDrop: [{ dragSelector: ".macro-icon", dropSelector: ".macro-list" }]
+
             actionBar.removeAttr('id').addClass('action-bar');
             $('<div>').attr('title', i18n("MONKS.HOTBAREXPANSION.clear-row")).addClass('bar-controls clear-row flexcol').append($('<i>').addClass('fas fa-trash')).on('click', $.proxy(MonksHotbarExpansion.clearMacroRow, app, i)).prependTo(actionBar);
             actionBar.find('#macro-list').addClass('macro-list').removeAttr('id').toggleClass('selected', app.page == i);
             actionBar.find('#hotbar-page-controls').removeAttr('id').find('.page-control').remove();
             $('.bar-controls:not(.clear-row)', actionBar).toggleClass('selected', app.page == i).on('click', $.proxy(MonksHotbarExpansion.changePage, app, i));
             $(".macro", actionBar).click(app._onClickMacro.bind(app)).hover(app._onHoverMacro.bind(app));
+
+            app._activateCoreListeners(actionBar);
+
             hotbarpage.append(actionBar);
 
             Hooks.callAll('renderMonksHotbarExpansionActionBar', app, actionBar, {
