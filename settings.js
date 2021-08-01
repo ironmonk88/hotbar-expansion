@@ -14,7 +14,7 @@ export const registerSettings = function () {
         default: 5,
         type: Number,
         range: {
-            min: 1,
+            min: 2,
             max: 5,
             step: 1
         },
