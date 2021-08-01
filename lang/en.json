@@ -1,3 +1,7 @@
 {
+	"MONKS.HOTBAREXPANSION.settings": {
+		"number-rows.name": "Number of rows",
+		"number-rows.hint": "Number of rows to display when the hotbar number is clicked"
+	},
 	"MONKS.HOTBAREXPANSION.clear-row": "Clear Row"
 }

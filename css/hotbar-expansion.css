@@ -7,8 +7,8 @@
     bottom: 70px;
     width: 582px;
     left: 220px;
-    transition: height 1s ease;
-    height: 260px;
+    transition: max-height 1s ease;
+    max-height: 260px;
     z-index: 10;
 }
 .hotbar-page.opening {
@@ -16,7 +16,7 @@
 }
 
 .hotbar-page.collapsed {
-    height: 0px;
+    max-height: 0;
     overflow: hidden;
 }
 
