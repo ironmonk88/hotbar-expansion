@@ -47,6 +47,12 @@ export class MonksHotbarExpansion {
             app._pagecollapsed = true;
         app._dragDrop[0].dropSelector = "#macro-list,.macro-list";
         let hotbarpage = $('<div>').addClass('hotbar-page flexcol').toggleClass('collapsed', app._pagecollapsed);
+
+        // Minimal-ui position compatibility
+        if (game.modules.get('minimal-ui')?.active) {
+            hotbarpage.css('left', 'var(--hotbarxpos)')
+        }
+
         for (let i = 1; i <= 5; i++) {
             let macros = app._getMacrosByPage(i);
 
