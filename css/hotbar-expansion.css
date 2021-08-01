@@ -20,6 +20,14 @@
     overflow: hidden;
 }
 
+.hotbar-page.reverse {
+    flex-direction: column-reverse;
+}
+
+.hotbar-page.reverse nav:first-child {
+    display: none;
+}
+
 .hotbar-page .action-bar {
     flex: 1;
     height: 52px;

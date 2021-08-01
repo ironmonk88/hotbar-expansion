@@ -1,7 +1,9 @@
 {
 	"MONKS.HOTBAREXPANSION.settings": {
 		"number-rows.name": "Number of rows",
-		"number-rows.hint": "Number of rows to display when the hotbar number is clicked"
+		"number-rows.hint": "Number of rows to display when the hotbar number is clicked",
+		"reverse-row-order.name": "Reverse",
+		"reverse-row-order.hint": "Reverse the rows order, not duplicating the first row (2 rows minimum)"
 	},
 	"MONKS.HOTBAREXPANSION.clear-row": "Clear Row"
 }

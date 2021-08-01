@@ -51,7 +51,12 @@ export class MonksHotbarExpansion {
             app._pagecollapsed = true;
         app._dragDrop[0].dropSelector = "#macro-list,.macro-list";
         let hotbarpage = $('<div>').addClass('hotbar-page flexcol').toggleClass('collapsed', app._pagecollapsed);
-        const numberOfRows = game.settings.get("monks-hotbar-expansion", 'number-rows')
+
+        const reverseRows = game.settings.get("monks-hotbar-expansion", 'reverse-row-order');
+        if (reverseRows) hotbarpage.addClass('reverse');
+
+        const numberOfRows = game.settings.get("monks-hotbar-expansion", 'number-rows');
+
         for (let i = 1; i <= numberOfRows; i++) {
             let macros = app._getMacrosByPage(i);
 

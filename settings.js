@@ -20,4 +20,14 @@ export const registerSettings = function () {
         },
         onChange: debouncedReload
     });
+
+    game.settings.register(modulename, "reverse-row-order", {
+        name: i18n("MONKS.HOTBAREXPANSION.settings.reverse-row-order.name"),
+        hint: i18n("MONKS.HOTBAREXPANSION.settings.reverse-row-order.hint"),
+        scope: "client",
+        config: true,
+        default: false,
+        type: Boolean,
+        onChange: debouncedReload
+    });
 };
