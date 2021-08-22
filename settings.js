@@ -1,4 +1,4 @@
-import { i18n } from "./hotbar-expansion.js";
+import { i18n, setting } from "./hotbar-expansion.js";
 
 export const registerSettings = function () {
 
@@ -6,9 +6,15 @@ export const registerSettings = function () {
 
     const debouncedReload = foundry.utils.debounce(function () { window.location.reload(); }, 100);
 
+    const updateClass = () => {
+        $('.hotbar-page')
+            .toggleClass('reverse', setting('reverse-row-order'))
+            .toggleClass('hidefirst', setting('hide-first-row'));
+    }
+
     game.settings.register(modulename, "number-rows", {
-        name: i18n("MONKS.HOTBAREXPANSION.settings.number-rows.name"),
-        hint: i18n("MONKS.HOTBAREXPANSION.settings.number-rows.hint"),
+        name: i18n("MonksHotbarExpansion.number-rows.name"),
+        hint: i18n("MonksHotbarExpansion.number-rows.hint"),
         scope: "client",
         config: true,
         default: 5,
@@ -22,12 +28,22 @@ export const registerSettings = function () {
     });
 
     game.settings.register(modulename, "reverse-row-order", {
-        name: i18n("MONKS.HOTBAREXPANSION.settings.reverse-row-order.name"),
-        hint: i18n("MONKS.HOTBAREXPANSION.settings.reverse-row-order.hint"),
+        name: i18n("MonksHotbarExpansion.reverse-row-order.name"),
+        hint: i18n("MonksHotbarExpansion.reverse-row-order.hint"),
         scope: "client",
         config: true,
         default: false,
         type: Boolean,
-        onChange: debouncedReload
+        onChange: updateClass
+    });
+
+    game.settings.register(modulename, "hide-first-row", {
+        name: i18n("MonksHotbarExpansion.hide-first-row.name"),
+        hint: i18n("MonksHotbarExpansion.hide-first-row.hint"),
+        scope: "client",
+        config: true,
+        default: false,
+        type: Boolean,
+        onChange: updateClass
     });
 };

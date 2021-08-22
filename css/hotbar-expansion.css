@@ -3,13 +3,16 @@
 }
 
 .hotbar-page {
-    position: fixed;
-    bottom: 70px;
+    position: absolute;
+    bottom: 60px;
     width: 582px;
-    left: 220px;
+    left: 0px;
     transition: max-height 1s ease;
     max-height: 260px;
     z-index: 10;
+}
+.hotbar-page.custom-hotbar{
+    bottom:110px;
 }
 .hotbar-page.opening {
     overflow: hidden;
@@ -24,7 +27,7 @@
     flex-direction: column-reverse;
 }
 
-.hotbar-page.reverse nav:first-child {
+.hotbar-page.hidefirst nav:first-child {
     display: none;
 }
 

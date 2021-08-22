@@ -1,9 +1,9 @@
 {
-	"MONKS.HOTBAREXPANSION.settings": {
-		"number-rows.name": "Number of rows",
-		"number-rows.hint": "Number of rows to display when the hotbar number is clicked",
-		"reverse-row-order.name": "Reverse",
-		"reverse-row-order.hint": "Reverse the rows order, not duplicating the first row"
-	},
-	"MONKS.HOTBAREXPANSION.clear-row": "Clear Row"
+	"MonksHotbarExpansion.number-rows.name": "Number of rows",
+	"MonksHotbarExpansion.number-rows.hint": "Number of rows to display when the hotbar number is clicked",
+	"MonksHotbarExpansion.reverse-row-order.name": "Reverse",
+	"MonksHotbarExpansion.reverse-row-order.hint": "Reverse the rows order, not duplicating the first row",
+	"MonksHotbarExpansion.hide-first-row.name": "Hide the first row",
+	"MonksHotbarExpansion.hide-first-row.hint": "If you like to have all rows open at once, hide the first row to save space.",
+	"MonksHotbarExpansion.clear-row": "Clear Row"
 }

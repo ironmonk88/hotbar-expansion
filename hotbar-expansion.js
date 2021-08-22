@@ -11,6 +11,9 @@ export let error = (...args) => console.error("monks-hotbar-expansion | ", ...ar
 export let i18n = key => {
     return game.i18n.localize(key);
 };
+export let setting = key => {
+    return game.settings.get("monks-hotbar-expansion", key);
+};
 
 export class MonksHotbarExpansion {
     static tracker = false;
@@ -52,10 +55,17 @@ export class MonksHotbarExpansion {
         app._dragDrop[0].dropSelector = "#macro-list,.macro-list";
         let hotbarpage = $('<div>').addClass('hotbar-page flexcol').toggleClass('collapsed', app._pagecollapsed);
 
-        const reverseRows = game.settings.get("monks-hotbar-expansion", 'reverse-row-order');
-        if (reverseRows) hotbarpage.addClass('reverse');
+        // Minimal-ui position compatibility
+        if (game.modules.get('minimal-ui')?.active) {
+            hotbarpage.css('left', 'var(--hotbarxpos)')
+        }
 
-        const numberOfRows = game.settings.get("monks-hotbar-expansion", 'number-rows');
+        hotbarpage
+            .toggleClass('reverse', setting('reverse-row-order'))
+            .toggleClass('hidefirst', setting('hide-first-row'))
+            .toggleClass('custom-hotbar', game.modules.get("custom-hotbar")?.active);
+
+        const numberOfRows = setting('number-rows');
 
         for (let i = 1; i <= numberOfRows; i++) {
             let macros = app._getMacrosByPage(i);
@@ -70,7 +80,7 @@ export class MonksHotbarExpansion {
             //dragDrop: [{ dragSelector: ".macro-icon", dropSelector: ".macro-list" }]
 
             actionBar.removeAttr('id').addClass('action-bar');
-            $('<div>').attr('title', i18n("MONKS.HOTBAREXPANSION.clear-row")).addClass('bar-controls clear-row flexcol').append($('<i>').addClass('fas fa-trash')).on('click', $.proxy(MonksHotbarExpansion.clearMacroRow, app, i)).prependTo(actionBar);
+            $('<div>').attr('title', i18n("MonksHotbarExpansion.clear-row")).addClass('bar-controls clear-row flexcol').append($('<i>').addClass('fas fa-trash')).on('click', $.proxy(MonksHotbarExpansion.clearMacroRow, app, i)).prependTo(actionBar);
             actionBar.find('#macro-list').addClass('macro-list').removeAttr('id').toggleClass('selected', app.page == i);
             actionBar.find('#hotbar-page-controls').removeAttr('id').find('.page-control').remove();
             $('.bar-controls:not(.clear-row)', actionBar).toggleClass('selected', app.page == i).on('click', $.proxy(MonksHotbarExpansion.changePage, app, i));
