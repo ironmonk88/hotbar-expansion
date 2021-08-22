@@ -1,3 +1,5 @@
+import { registerSettings } from "./settings.js";
+
 export let debug = (...args) => {
     if (debugEnabled > 1) console.log("DEBUG: combatdetails | ", ...args);
 };
@@ -16,6 +18,8 @@ export class MonksHotbarExpansion {
 
     static init() {
 	    log("initializing");
+
+        registerSettings();
     }
 
     static ready() {
@@ -47,7 +51,13 @@ export class MonksHotbarExpansion {
             app._pagecollapsed = true;
         app._dragDrop[0].dropSelector = "#macro-list,.macro-list";
         let hotbarpage = $('<div>').addClass('hotbar-page flexcol').toggleClass('collapsed', app._pagecollapsed);
-        for (let i = 1; i <= 5; i++) {
+
+        const reverseRows = game.settings.get("monks-hotbar-expansion", 'reverse-row-order');
+        if (reverseRows) hotbarpage.addClass('reverse');
+
+        const numberOfRows = game.settings.get("monks-hotbar-expansion", 'number-rows');
+
+        for (let i = 1; i <= numberOfRows; i++) {
             let macros = app._getMacrosByPage(i);
 
             let macroRow = await renderTemplate(app.options.template, {
@@ -82,6 +92,9 @@ export class MonksHotbarExpansion {
     }
 }
 
+Hooks.on('init', () => {
+    MonksHotbarExpansion.init();
+});
 Hooks.on('renderHotbar', (app, html) => {
     if(app instanceof CONFIG.ui.hotbar)
         MonksHotbarExpansion.renderHotbar(app, html);
