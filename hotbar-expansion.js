@@ -58,8 +58,8 @@ export class MonksHotbarExpansion {
         hotbarpage
             .toggleClass('reverse', setting('reverse-row-order'))
             .toggleClass('hidefirst', setting('hide-first-row'))
-            .toggleClass('custom-hotbar', game.modules.get("custom-hotbar")?.active)
-            .toggleClass('rpg-ui', game.modules.get("rpg-styled-ui")?.active);
+            .toggleClass('custom-hotbar', game.modules.get("custom-hotbar")?.active === true)
+            .toggleClass('rpg-ui', game.modules.get("rpg-styled-ui")?.active === true);
 
         const numberOfRows = setting('number-rows');
 
