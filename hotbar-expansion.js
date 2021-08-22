@@ -55,11 +55,6 @@ export class MonksHotbarExpansion {
         app._dragDrop[0].dropSelector = "#macro-list,.macro-list";
         let hotbarpage = $('<div>').addClass('hotbar-page flexcol').toggleClass('collapsed', app._pagecollapsed);
 
-        // Minimal-ui position compatibility
-        if (game.modules.get('minimal-ui')?.active) {
-            hotbarpage.css('left', 'var(--hotbarxpos)')
-        }
-
         hotbarpage
             .toggleClass('reverse', setting('reverse-row-order'))
             .toggleClass('hidefirst', setting('hide-first-row'))
