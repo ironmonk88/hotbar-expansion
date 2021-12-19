@@ -1,5 +1,9 @@
-#hotbar .macro .tooltip{
-    z-index:30;
+#hotbar {
+    position: relative;
+}
+
+#hotbar .macro .tooltip {
+    z-index: 30;
 }
 
 .hotbar-page {
