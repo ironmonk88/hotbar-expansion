@@ -1,0 +1,53 @@
+<div id="hotbar" class="flexrow">
+    <div id="hotbar-directory-controls" class="bar-controls flexcol">
+        <a id="bar-toggle">
+            <i class="fas fa-caret-down"></i>
+        </a>
+        <a id="macro-directory">
+            <i class="fas fa-folder"></i>
+        </a>
+    </div>
+    <nav id="action-bar" class="action-bar flexrow {{barClass}}">
+        <ol id="macro-list" class="flexrow macro-list" data-page="{{page}}">
+            {{#each macros}}
+            <li class="macro {{this.cssClass}}" data-slot="{{this.slot}}"
+                {{#if this.macro}} data-macro-id="{{this.macro.id}}" {{/if}}>
+                <span class="macro-key">{{this.key}}</span>
+                {{#if this.icon}}
+                <img class="macro-icon" src="{{this.icon}}" />
+                {{/if}}
+            </li>
+            {{/each}}
+        </ol>
+    </nav>
+    <div id="hotbar-page-controls" class="bar-controls flexcol">
+        {{#if showArrows}}<a class="page-control" data-action="page-up"><i class="fas fa-angle-up"></i></a>{{/if}}
+        <span class="page-number">{{page}}</span>
+        {{#if showArrows}}<a class="page-control" data-action="page-down"><i class="fas fa-angle-down"></i></a>{{/if}}
+    </div>
+    <div id="hotbar-page" class="hotbar-page flexcol {{pageClass}}">
+        {{#each macrolist}}
+        <div class="hotbar-page-row flexrow{{#if this.selected}} selected{{/if}}" data-page="{{page}}">
+            <div title="{{ localize MonksHotbarExpansion.clear-row}}" class="bar-controls clear-row flexcol">
+                <i class="fas fa-trash"></i>
+            </div>
+            <nav class="action-bar flexrow">
+                <ol class="flexrow macro-list" data-page="{{page}}">
+                    {{#each macros}}
+                    <li class="macro {{this.cssClass}}" data-slot="{{this.slot}}"
+                        {{#if this.macro}} data-macro-id="{{this.macro.id}}" {{/if}}>
+                        <span class="macro-key">{{this.key}}</span>
+                        {{#if this.icon}}
+                        <img class="macro-icon" src="{{this.icon}}" />
+                        {{/if}}
+                    </li>
+                    {{/each}}
+                </ol>
+            </nav>
+            <div class="bar-controls flexcol">
+                <span class="page-number">{{page}}</span>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
