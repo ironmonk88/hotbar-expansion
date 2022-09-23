@@ -106,6 +106,7 @@ const WithMonksHotbarExpansion = (Hotbar) => {
             return new Promise(resolve => {
                 page.slideDown(200, () => {
                     page.removeClass("collapsed");
+                    page.css({"display":""});
                     this._pagecollapsed = false;
                     resolve(true);
                 });
@@ -135,10 +136,16 @@ const WithMonksHotbarExpansion = (Hotbar) => {
         }
 
         async clearMacroRow(event) {
-            let page = $(event.currentTarget).closest('.hotbar-page-row').data('page');
-            for (let i = 1; i <= 10; i++) {
-                await game.user.assignHotbarMacro(null, ((page - 1) * 10) + i);
-            }
+            return Dialog.confirm({
+                title: `Clearing Macro Row`,
+                content: `<h4>${game.i18n.localize("AreYouSure")}</h4><p>You are about to remove all macros from this row</p>`,
+                yes: async () => {
+                    let page = $(event.currentTarget).closest('.hotbar-page-row').data('page');
+                    for (let i = 1; i <= 10; i++) {
+                        await game.user.assignHotbarMacro(null, ((page - 1) * 10) + i);
+                    }
+                }
+            });
         }
     }
 

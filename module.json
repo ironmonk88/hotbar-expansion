@@ -1,7 +1,7 @@
 {
   "title": "Monk's Hotbar Expansion",
   "description": "Click to show all rows of the Hotbar, so that you can select the row by sight rather than clicking through pages.  Drag and Drop on any of the rows, and clear an entire row if needed.",
-  "version": "1.0.14",
+  "version": "10.1",
   "authors": [
     {
       "name": "IronMonk",
@@ -25,7 +25,7 @@
     "css/hotbar-expansion.css"
   ],
   "url": "https://github.com/ironmonk88/hotbar-expansion",
-  "download": "https://github.com/ironmonk88/hotbar-expansion/archive/1.0.14.zip",
+  "download": "https://github.com/ironmonk88/hotbar-expansion/archive/10.1.zip",
   "manifest": "https://github.com/ironmonk88/hotbar-expansion/releases/latest/download/module.json",
   "bugs": "https://github.com/ironmonk88/hotbar-expansion/issues",
   "allowBugReporter": true,

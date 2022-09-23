@@ -1,3 +1,11 @@
+# Version 10.1
+
+Fixed issue with the initial opening of the bar when the reverse order setting is on.
+
+Added a confirmation dialog when the clear entire row is clicked
+
+Fixed tooltip issue in v10.
+
 # Version 1.0.14
 
 Rebuilt the hotbar so that it should integrate better with Foundry
