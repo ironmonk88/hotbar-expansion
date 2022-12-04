@@ -1,0 +1,17 @@
+{
+	"MonksHotbarExpansion.number-rows.name": "Anzahl der Leisten",
+	"MonksHotbarExpansion.number-rows.hint": "Anzahl der Makro-Leisten, die angezeigt werden, wenn die Zahl auf der Makro-Leiste angeklickt wird",
+	"MonksHotbarExpansion.reverse-row-order.name": "Reihenfolge Umkehren",
+	"MonksHotbarExpansion.reverse-row-order.hint": "Kehrt die Reihenfolge der Makro-Leisten um (die erste Leiste wird dabei nicht doppelt angezeigt)",
+	"MonksHotbarExpansion.hide-first-row.name": "Verstecke erste Leiste",
+	"MonksHotbarExpansion.hide-first-row.hint": "Wenn du alle Makro-Leisten zur selben Zeit offen hast, kannst du die erste Leiste ausblenden um Platz zu sparen",
+	"MonksHotbarExpansion.collapse-on-select.name": "Zusammenklappen nach Klick",
+	"MonksHotbarExpansion.collapse-on-select.hint": "Klappt die zusätzlichen Leisten ein, wenn eine Leiste ausgewählt wird",
+	"MonksHotbarExpansion.toggle-key.name": "Leisten umschalten",
+	"MonksHotbarExpansion.toggle-key.hint": "Schaltet die zusätzlichen Makro-Leisten an/aus",
+	"MonksHotbarExpansion.collapse-on-open.name": "Zusammengeklappt starten",
+	"MonksHotbarExpansion.collapse-on-open.hint": "Wenn Foundry startet sind alle Makro-Leisten eingeklappt.",
+	"MonksHotbarExpansion.hide-page-arrows.name": "Verstecke Seiten-Pfeile",
+	"MonksHotbarExpansion.hide-page-arrows.hint": "Versteckt die Pfeile zum Wechseln der Makro-Leisten",
+	"MonksHotbarExpansion.clear-row": "Leiste leeren"
+}
