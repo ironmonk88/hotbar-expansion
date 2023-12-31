@@ -4,8 +4,6 @@ export const registerSettings = function () {
 
     let modulename = "monks-hotbar-expansion";
 
-    const debouncedReload = foundry.utils.debounce(function () { window.location.reload(); }, 100);
-
     const updateClass = () => {
         $('#hotbar .hotbar-page')
             .toggleClass('reverse', setting('reverse-row-order'))
@@ -24,7 +22,7 @@ export const registerSettings = function () {
             max: 5,
             step: 1
         },
-        onChange: debouncedReload
+        requiresReload: true
     });
 
     game.settings.register(modulename, "reverse-row-order", {
@@ -72,6 +70,6 @@ export const registerSettings = function () {
         config: true,
         default: false,
         type: Boolean,
-        onChange: debouncedReload
+        requiresReload: true
     });
 };

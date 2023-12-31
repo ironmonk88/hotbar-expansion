@@ -1,3 +1,13 @@
+# Version 11.01
+
+Added a little more padding between rows
+
+Added keybindings to switch between rows quickly
+
+Correctly implemented requiresReload in the settings
+
+Updated the template to be compliant with v11
+
 # Version 10.1
 
 Fixed issue with the initial opening of the bar when the reverse order setting is on.

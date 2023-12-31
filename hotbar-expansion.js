@@ -161,7 +161,32 @@ Hooks.on('init', () => {
     game.keybindings.register('monks-hotbar-expansion', 'toggle-key', {
         name: 'MonksHotbarExpansion.toggle-key.name',
         hint: 'MonksHotbarExpansion.toggle-key.hint',
-        editable: [{ key: 'KeyH', modifiers: [KeyboardManager.MODIFIER_KEYS?.SHIFT] }],
+        editable: [{ key: '`', modifiers: [KeyboardManager.MODIFIER_KEYS?.SHIFT] }],
         onDown: (data) => { ui.hotbar._onTogglePage(data.event); },
+    });
+    game.keybindings.register('monks-hotbar-expansion', 'switch-1', {
+        name: 'MonksHotbarExpansion.switch-row.name',
+        editable: [{ key: 'Key1', modifiers: [KeyboardManager.MODIFIER_KEYS?.SHIFT] }],
+        onDown: (data) => { ui.hotbar.changePage(1); },
+    });
+    game.keybindings.register('monks-hotbar-expansion', 'switch-2', {
+        name: 'MonksHotbarExpansion.switch-row.name',
+        editable: [{ key: 'Key2', modifiers: [KeyboardManager.MODIFIER_KEYS?.SHIFT] }],
+        onDown: (data) => { ui.hotbar.changePage(2); },
+    });
+    game.keybindings.register('monks-hotbar-expansion', 'switch-3', {
+        name: 'MonksHotbarExpansion.switch-row.name',
+        editable: [{ key: 'Key3', modifiers: [KeyboardManager.MODIFIER_KEYS?.SHIFT] }],
+        onDown: (data) => { ui.hotbar.changePage(3); },
+    });
+    game.keybindings.register('monks-hotbar-expansion', 'switch-4', {
+        name: 'MonksHotbarExpansion.switch-row.name',
+        editable: [{ key: 'Key4', modifiers: [KeyboardManager.MODIFIER_KEYS?.SHIFT] }],
+        onDown: (data) => { ui.hotbar.changePage(4); },
+    });
+    game.keybindings.register('monks-hotbar-expansion', 'switch-5', {
+        name: 'MonksHotbarExpansion.switch-row.name',
+        editable: [{ key: 'Key5', modifiers: [KeyboardManager.MODIFIER_KEYS?.SHIFT] }],
+        onDown: (data) => { ui.hotbar.changePage(5); },
     });
 });

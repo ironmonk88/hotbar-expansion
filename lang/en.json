@@ -13,5 +13,7 @@
 	"MonksHotbarExpansion.collapse-on-open.hint": "When Foundry first loads start with the Expansion collapsed",
 	"MonksHotbarExpansion.hide-page-arrows.name": "Hide Page Arrows",
 	"MonksHotbarExpansion.hide-page-arrows.hint": "In case you don't want the arrows visible",
+	"MonksHotbarExpansion.switch-row.name": "Switch the Macro row",
+
 	"MonksHotbarExpansion.clear-row": "Clear Row"
 }
